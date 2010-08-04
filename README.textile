@@ -1,0 +1,5 @@
+PHP CodeSniffer for CakePHP
+
+A refined version of PHP CodeSniffer that can be used for CakePHP development.
+
+#UNDER CONSTRUCTION
