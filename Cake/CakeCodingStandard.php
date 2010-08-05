@@ -40,7 +40,7 @@ class PHP_CodeSniffer_Standards_Cake_CakeCodingStandard extends PHP_CodeSniffer_
   public function getIncludedSniffs()
   {
     echo("About to start the code sniffing using the following sniffs");
-    var $sniffs =  array(
+    return  array(
       'Generic/Sniffs/PHP/DisallowShortOpenTagSniff.php',
       'Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php',
       'Generic/Sniffs/WhiteSpace/',
@@ -53,9 +53,6 @@ class PHP_CodeSniffer_Standards_Cake_CakeCodingStandard extends PHP_CodeSniffer_
       'Squiz/Sniffs/Functions/GlobalFunctionSniff.php',
       'Squiz/Sniffs/ControlStructures/InlineIfDeclarationSniff.php'
     );
-
-    print_r($sniffs);
-    return $sniffs;
 
   }//end getIncludedSniffs()
 
