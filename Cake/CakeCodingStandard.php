@@ -39,7 +39,6 @@ class PHP_CodeSniffer_Standards_Cake_CakeCodingStandard extends PHP_CodeSniffer_
    */
   public function getIncludedSniffs()
   {
-    echo("About to start the code sniffing using the following sniffs");
     return  array(
       'Generic/Sniffs/PHP/DisallowShortOpenTagSniff.php',
       'Generic/Sniffs/NamingConventions/UpperCaseConstantNameSniff.php',
