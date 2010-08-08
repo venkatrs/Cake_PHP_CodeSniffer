@@ -8,7 +8,7 @@
  *
  */
 class Cake_Sniffs_Files_ControllersFileNameSniff implements PHP_CodeSniffer_Sniff
-  
+
 {
 
   /**
@@ -37,26 +37,22 @@ class Cake_Sniffs_Files_ControllersFileNameSniff implements PHP_CodeSniffer_Snif
   public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
   {
     $path = $phpcsFile->getFileName();
-    $tokens = $phpcsFile->getTokens();
-    $classname_token = $phpcsFile->findNext(T_STRING, $stackPtr);
-    $classname = $tokens[$classname_token]['content'];
+    if(!preg_match("/(controllers)/i", $path)) return; 
 
-    if(preg_match("/(controllers)/i", $path)) {
-      if(preg_match("/(components)/i", $path)) {
-        $final_classname = $this->classname_without_type($classname, "Component");
-        if(is_null($final_classname)) {
-          $error = "Cake convention expects the component class name to end with 'Component'";
-          $phpcsFile->addError($error, $stackPtr);
-          return;
-        }
-      } else {
-        $final_classname = $this->classname_with_type($classname, "Controller"); 
-        if(is_null($final_classname)) {
-          $error = "Cake convention expects the controller class name to end with 'Controller'";
-          $phpcsFile->addError($error, $stackPtr);
-          return;
-        }
-      }
+    $tokens = $phpcsFile->getTokens();
+    $classname = $tokens[$phpcsFile->findNext(T_STRING, $stackPtr)]['content'];
+
+    if(preg_match("/(components)/i", $path)) {
+      $final_classname = $this->classname_without_type($classname, "Component");
+      $msg_on_error = "Cake convention expects the component class name to end with 'Component'";
+    } else {
+      $final_classname = $this->classname_with_type($classname, "Controller"); 
+      $msg_on_error = "Cake convention expects the controller class name to end with 'Controller'";
+    }
+
+    if(is_null($final_classname)) {
+      $phpcsFile->addError($msg_on_error, $stackPtr);
+      return;
     }
 
     $expected_file_name =  preg_replace('/([A-Z])/', '_${1}', $final_classname);
@@ -85,7 +81,6 @@ class Cake_Sniffs_Files_ControllersFileNameSniff implements PHP_CodeSniffer_Snif
     return NULL;
   } 
 
-  
 }//end class
 
 ?>
