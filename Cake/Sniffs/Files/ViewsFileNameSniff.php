@@ -40,23 +40,19 @@ class Cake_Sniffs_Files_ViewsFileNameSniff implements PHP_CodeSniffer_Sniff
     if(!preg_match("/(views)/i", $path)) return;
 
     $tokens = $phpcsFile->getTokens();
-    $classname_token = $phpcsFile->findNext(T_STRING, $stackPtr);
-    $classname = $tokens[$classname_token]['content'];
+    $classname = $tokens[$phpcsFile->findNext(T_STRING, $stackPtr)]['content'];
 
     if(preg_match("/(helpers)/i", $path)) {
       $final_classname = $this->classname_without_type($classname, "Helper");
-      if(is_null($final_classname)) {
-        $error = "Cake convention expects the helper class name to end with 'Helper'";
-        $phpcsFile->addError($error, $stackPtr);
-        return;
-      }
+      $msg_on_error = "Cake convention expects the helper class name to end with 'Helper'";
     } else {
       $final_classname = $this->classname_with_type($classname, "View"); 
-      if(is_null($final_classname)) {
-        $error = "Cake convention expects the view class name to end with 'View'";
-        $phpcsFile->addError($error, $stackPtr);
-        return;
-      }
+      $msg_on_error = "Cake convention expects the view class name to end with 'View'";
+    }
+
+    if(is_null($final_classname)) {
+      $phpcsFile->addError($msg_on_error, $stackPtr);
+      return;
     }
 
     $expected_file_name =  preg_replace('/([A-Z])/', '_${1}', $final_classname);
