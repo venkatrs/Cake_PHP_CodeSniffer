@@ -16,5 +16,3 @@ In general, filenames are underscored while classnames are CamelCased. So if you
     * The Behavior class EspeciallyFunkableBehavior would be found in a file named especially_funkable.php
     * The View class SuperSimpleView would be found in a file named super_simple.php
     * The Helper class BestEverHelper would be found in a file named best_ever.php
-
-#UNDER CONSTRUCTION
