@@ -1,7 +1,19 @@
-PHP CodeSniffer for CakePHP
+h1. PHP CodeSniffer for CakePHP
 
 A refined version of PHP CodeSniffer that can be used for CakePHP development.
 
 Added more sniffs based on CakePHP Conventions and built over the original http://www.sanisoft.com/downloads/cakephp_sniffs/. 
+
+The newly added sniffs are 'Files and Classname Conventions" as prescribed in the CakePHP cook book.
+
+h3. Excrept from CakePHP Cook Book:
+In general, filenames are underscored while classnames are CamelCased. So if you have a class MyNiftyClass, then in Cake, the file should be named my_nifty_class.php. Below are examples of how to name the file for each of the different types of classes you would typically use in a CakePHP application:
+
+    * The Controller class KissesAndHugsController would be found in a file named kisses_and_hugs_controller.php (notice _controller in the filename)
+    * The Component class MyHandyComponent would be found in a file named my_handy.php
+    * The Model class OptionValue would be found in a file named option_value.php
+    * The Behavior class EspeciallyFunkableBehavior would be found in a file named especially_funkable.php
+    * The View class SuperSimpleView would be found in a file named super_simple.php
+    * The Helper class BestEverHelper would be found in a file named best_ever.php
 
 #UNDER CONSTRUCTION
