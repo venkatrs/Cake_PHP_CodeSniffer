@@ -62,7 +62,7 @@ class Cake_Sniffs_Files_ControllersFileNameSniff implements PHP_CodeSniffer_Snif
     $expected_file_name = strtolower($expected_file_name) . ".php";
 
     if(!preg_match("/" . $expected_file_name . "/", $path)) {
-      $error = "File name is expected to be, '" . $expected_file_name . "' for Class with name, '" . $classname . "'";
+      $error = "Cake convention expects the file name to be, '" . $expected_file_name . "' for Class with name, '" . $classname . "'";
       $phpcsFile->addError($error, $stackPtr);
     }
   }

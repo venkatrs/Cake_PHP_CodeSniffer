@@ -2,4 +2,6 @@ PHP CodeSniffer for CakePHP
 
 A refined version of PHP CodeSniffer that can be used for CakePHP development.
 
+Added more sniffs based on CakePHP Conventions and built over the original http://www.sanisoft.com/downloads/cakephp_sniffs/. 
+
 #UNDER CONSTRUCTION
