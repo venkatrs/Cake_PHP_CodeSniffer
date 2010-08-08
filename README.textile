@@ -7,6 +7,7 @@ Added more sniffs based on CakePHP Conventions and built over the original http:
 The newly added sniffs are 'Files and Classname Conventions" as prescribed in the CakePHP cook book.
 
 h3. Excrept from CakePHP Cook Book:
+
 In general, filenames are underscored while classnames are CamelCased. So if you have a class MyNiftyClass, then in Cake, the file should be named my_nifty_class.php. Below are examples of how to name the file for each of the different types of classes you would typically use in a CakePHP application:
 
     * The Controller class KissesAndHugsController would be found in a file named kisses_and_hugs_controller.php (notice _controller in the filename)
