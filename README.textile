@@ -1,5 +1,7 @@
 h1. PHP CodeSniffer for CakePHP
 
+h2. Note: The latest release (Cake_PHP_CodeSniffer.zip) can be downloaded from the Download section.
+
 A refined version of PHP CodeSniffer that can be used for CakePHP development.
 
 Added more sniffs based on CakePHP Conventions and built over the original http://www.sanisoft.com/downloads/cakephp_sniffs/. 
